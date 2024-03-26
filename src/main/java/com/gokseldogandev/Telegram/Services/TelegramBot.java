@@ -11,15 +11,20 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 @Component
 public class TelegramBot extends TelegramLongPollingBot {
+    @Value("${telegram.bot.token}")
+    private String token;
+    @Value("${telegram.bot.username}")
+    private String userName;
+
     @Override
     public String getBotUsername() {
 
-        return "GokselCekinoBot";
+        return userName;
     }
 
     @Override
     public String getBotToken() {
-        return "7187559726:AAF2I0kHlxiZinG_msijB8Z1e-PXCkfhMJY";
+        return token;
     }
 
     @Override
